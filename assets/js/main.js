@@ -9,13 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 
-  // Initialize AOS (Animate on Scroll)
+  // Initialize AOS (Animate on Scroll) - disabled on mobile viewports to prevent horizontal translation overflow
   if (window.AOS) {
     window.AOS.init({
       duration: 650,
       easing: 'ease-out-cubic',
       once: true,
-      offset: 50
+      offset: 30,
+      disable: () => window.innerWidth < 768
     });
   }
 
@@ -39,14 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function openDrawer() {
-    mobileDrawer.classList.remove('translate-x-full');
+    mobileDrawer.classList.remove('translate-x-full', 'invisible', 'pointer-events-none');
+    mobileDrawer.classList.add('translate-x-0', 'visible', 'pointer-events-auto');
     mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
+    mobileOverlay.classList.add('opacity-100', 'pointer-events-auto');
     document.body.style.overflow = 'hidden';
   }
 
   function closeDrawer() {
-    mobileDrawer.classList.add('translate-x-full');
+    mobileDrawer.classList.add('translate-x-full', 'invisible', 'pointer-events-none');
+    mobileDrawer.classList.remove('translate-x-0', 'visible', 'pointer-events-auto');
     mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+    mobileOverlay.classList.remove('opacity-100', 'pointer-events-auto');
     document.body.style.overflow = '';
   }
 
