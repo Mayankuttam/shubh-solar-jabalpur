@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#090D16" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Rounded Shield -->
+  <rect x="6" y="6" width="108" height="108" rx="28" fill="url(#shieldGrad)" stroke="#DCA542" stroke-width="2.5" />
+  
+  <!-- Geometric Solar Aperture / Third Eye Iris -->
+  <g transform="translate(60,60)">
+    <!-- 8 Radiant Solar Rays -->
+    <path d="M0 -42 L5 -25 L-5 -25 Z" fill="#F0BC5E" />
+    <path d="M0 42 L5 25 L-5 25 Z" fill="#F0BC5E" />
+    <path d="M-42 0 L-25 5 L-25 -5 Z" fill="#F0BC5E" />
+    <path d="M42 0 L25 5 L25 -5 Z" fill="#F0BC5E" />
+    <path d="M-30 -30 L-18 -14 L-14 -18 Z" fill="#D97706" />
+    <path d="M30 30 L18 14 L14 18 Z" fill="#D97706" />
+    <path d="M-30 30 L-14 18 L-18 14 Z" fill="#D97706" />
+    <path d="M30 -30 L14 -18 L18 -14 Z" fill="#D97706" />
+
+    <!-- Third Eye Outer Lens Curve (Solar Eye) -->
+    <path d="M -34 0 C -20 -20, 20 -20, 34 0 C 20 20, -20 20, -34 0 Z" fill="none" stroke="#F0BC5E" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Central Solar Cell Core -->
+    <circle cx="0" cy="0" r="14" fill="#0A0F1D" stroke="#38BDF8" stroke-width="2" />
+    <circle cx="0" cy="0" r="7" fill="#F0BC5E" />
+    <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+
+    <!-- PV Grid Micro-Lines -->
+    <line x1="-8" y1="-8" x2="8" y2="8" stroke="#38BDF8" stroke-width="1" opacity="0.6" />
+    <line x1="-8" y1="8" x2="8" y2="-8" stroke="#38BDF8" stroke-width="1" opacity="0.6" />
+  </g>
+</svg>
