@@ -735,123 +735,114 @@
   <!-- ======================================================== -->
   <!-- 7. SOLAR SAVINGS CALCULATOR                              -->
   <!-- ======================================================== -->
-  <section id="calculator" class="overflow-hidden w-full max-w-full py-20 bg-surface1 border-y border-white/10 relative">
+  <section id="calculator" class="overflow-hidden w-full max-w-full py-12 md:py-20 bg-surface1 border-y border-white/10 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16" data-aos="fade-up">
-        <span class="text-xs font-bold text-brandGold tracking-widest uppercase bg-brandGold/10 px-3.5 py-1 rounded-full border border-brandGold/20">
-          Interactive ROI &amp; Subsidy Engine
+      <div class="text-center max-w-2xl mx-auto space-y-2.5 mb-8 md:mb-12" data-aos="fade-up">
+        <span class="text-[11px] font-bold text-brandGold tracking-widest uppercase bg-brandGold/10 px-3 py-0.5 rounded-full border border-brandGold/20">
+          Solar ROI &amp; Subsidy Sizer
         </span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-          Calculate Your Rooftop Solar Financials &amp; Subsidy
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
+          Calculate Your Rooftop Solar &amp; Subsidy
         </h2>
-        <p class="text-base text-slate-400 leading-relaxed">
-          Slide your current monthly electricity bill to see your recommended kilowatt plant, required roof space, and exact PM Surya Ghar subsidy payout.
+        <p class="text-xs sm:text-sm text-slate-400">
+          Slide your monthly power bill to instantly see recommended plant size and ₹78,000 central DBT subsidy.
         </p>
       </div>
 
-      <!-- Calculator Card -->
-      <div class="max-w-4xl mx-auto glass-panel-gold rounded-3xl p-6 sm:p-10 shadow-2xl relative" data-aos="zoom-in">
+      <!-- Compact Calculator Card -->
+      <div class="max-w-3xl mx-auto glass-panel-gold rounded-2xl p-4 sm:p-8 shadow-2xl relative" data-aos="fade-up">
 
         <!-- Input Slider Area -->
-        <div class="space-y-6 pb-8 border-b border-white/10">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <div>
-              <label for="calc-bill-slider" class="text-sm font-bold text-slate-200">
-                Your Average Monthly Electricity Bill:
-              </label>
-              <span class="block text-xs text-slate-400">Based on MPPKVVCL Jabalpur Domestic LT Tariff</span>
-            </div>
-            <div id="calc-bill-display" class="text-2xl sm:text-3xl font-black text-brandGold">
+        <div class="space-y-4 pb-5 border-b border-white/10">
+          <div class="flex items-center justify-between">
+            <span class="text-xs sm:text-sm font-bold text-slate-200">
+              Monthly Electricity Bill:
+            </span>
+            <div id="calc-bill-display" class="text-xl sm:text-3xl font-black text-brandGold bg-surface2 px-3 py-1 rounded-lg border border-brandGold/30">
               ₹4,500
             </div>
           </div>
 
           <!-- Slider -->
-          <input type="range" id="calc-bill-slider" min="1500" max="30000" step="500" value="4500" class="gold-slider">
+          <input type="range" id="calc-bill-slider" min="1500" max="30000" step="500" value="4500" class="gold-slider" aria-label="Monthly Bill Slider">
 
-          <!-- Preset Quick Buttons -->
-          <div class="flex flex-wrap items-center gap-2 pt-2">
-            <span class="text-xs text-slate-400 font-medium mr-1">Quick Select:</span>
-            <button type="button" data-bill="2500" class="preset-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-surface2 border border-white/10 text-slate-300 hover:border-brandGold transition-all">₹2,500/mo (2 kW)</button>
-            <button type="button" data-bill="4500" class="preset-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-surface2 border border-brandGold/40 text-brandGold bg-brandGold/15 transition-all">₹4,500/mo (3 kW)</button>
-            <button type="button" data-bill="8000" class="preset-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-surface2 border border-white/10 text-slate-300 hover:border-brandGold transition-all">₹8,000/mo (5 kW)</button>
-            <button type="button" data-bill="15000" class="preset-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-surface2 border border-white/10 text-slate-300 hover:border-brandGold transition-all">₹15,000/mo (10 kW)</button>
+          <!-- Preset Quick Buttons (Single-scrollable row on mobile) -->
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+            <span class="text-[11px] text-slate-400 font-medium whitespace-nowrap mr-1">Presets:</span>
+            <button type="button" data-bill="2500" class="preset-btn text-[11px] font-semibold px-2.5 py-1 rounded-md bg-surface2 border border-white/10 text-slate-300 hover:border-brandGold whitespace-nowrap transition-all">₹2.5k (2 kW)</button>
+            <button type="button" data-bill="4500" class="preset-btn text-[11px] font-semibold px-2.5 py-1 rounded-md bg-surface2 border border-brandGold/40 text-brandGold bg-brandGold/15 whitespace-nowrap transition-all">₹4.5k (3 kW)</button>
+            <button type="button" data-bill="8000" class="preset-btn text-[11px] font-semibold px-2.5 py-1 rounded-md bg-surface2 border border-white/10 text-slate-300 hover:border-brandGold whitespace-nowrap transition-all">₹8k (5 kW)</button>
+            <button type="button" data-bill="15000" class="preset-btn text-[11px] font-semibold px-2.5 py-1 rounded-md bg-surface2 border border-white/10 text-slate-300 hover:border-brandGold whitespace-nowrap transition-all">₹15k (10 kW)</button>
           </div>
         </div>
 
-        <!-- Calculated Output Bento -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 py-8">
+        <!-- Primary High-Impact Results (2x2 on mobile, 4 in row on desktop) -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 py-5">
 
           <!-- Capacity -->
-          <div class="bg-surface2/90 p-4 rounded-xl border border-white/5 space-y-1">
-            <span class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">System Size</span>
-            <div id="calc-capacity" class="text-xl sm:text-2xl font-black text-white">3 kW</div>
-            <span class="text-[10px] text-brandGold block">TopCon Dual-Glass</span>
-          </div>
-
-          <!-- Roof Area -->
-          <div class="bg-surface2/90 p-4 rounded-xl border border-white/5 space-y-1">
-            <span class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Shadow-Free Roof</span>
-            <div id="calc-roof" class="text-xl sm:text-2xl font-black text-white">255 sq. ft.</div>
-            <span class="text-[10px] text-slate-400 block">Terrace or Tin Shed</span>
-          </div>
-
-          <!-- Monthly Generation -->
-          <div class="bg-surface2/90 p-4 rounded-xl border border-white/5 space-y-1">
-            <span class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Monthly Units</span>
-            <div id="calc-units" class="text-xl sm:text-2xl font-black text-white">375 kWh</div>
-            <span class="text-[10px] text-brandEmerald block">Clean Solar Power</span>
+          <div class="bg-surface2/90 p-3 sm:p-4 rounded-xl border border-white/5">
+            <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Plant Size</span>
+            <div id="calc-capacity" class="text-lg sm:text-2xl font-black text-white">3 kW</div>
+            <span class="text-[10px] text-brandGold block truncate">TopCon Bifacial</span>
           </div>
 
           <!-- Central Subsidy -->
-          <div class="bg-surface2/90 p-4 rounded-xl border border-brandEmerald/40 space-y-1 bg-brandEmerald/5">
-            <span class="text-[11px] text-brandEmerald uppercase font-bold tracking-wider">Central DBT Subsidy</span>
-            <div id="calc-subsidy" class="text-xl sm:text-2xl font-black text-brandEmerald">₹78,000</div>
-            <span class="text-[10px] text-slate-300 block">Direct Bank Credit</span>
+          <div class="bg-surface2/90 p-3 sm:p-4 rounded-xl border border-brandEmerald/40 bg-brandEmerald/5">
+            <span class="text-[10px] text-brandEmerald uppercase font-bold tracking-wider block">Govt Subsidy</span>
+            <div id="calc-subsidy" class="text-lg sm:text-2xl font-black text-brandEmerald">₹78,000</div>
+            <span class="text-[10px] text-slate-300 block truncate">Direct DBT Cash</span>
           </div>
 
           <!-- Monthly Savings -->
-          <div class="bg-surface2/90 p-4 rounded-xl border border-white/5 space-y-1">
-            <span class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Monthly Bill Cut</span>
-            <div id="calc-monthly-savings" class="text-xl sm:text-2xl font-black text-brandGold">₹2,812</div>
-            <span class="text-[10px] text-slate-400 block">Direct Bill Offset</span>
-          </div>
-
-          <!-- Annual Savings -->
-          <div class="bg-surface2/90 p-4 rounded-xl border border-white/5 space-y-1">
-            <span class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Annual Savings</span>
-            <div id="calc-annual-savings" class="text-xl sm:text-2xl font-black text-brandGold">₹33,744</div>
-            <span class="text-[10px] text-slate-400 block">Every Year</span>
+          <div class="bg-surface2/90 p-3 sm:p-4 rounded-xl border border-white/5">
+            <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Monthly Bill Cut</span>
+            <div id="calc-monthly-savings" class="text-lg sm:text-2xl font-black text-brandGold">₹2,812</div>
+            <span class="text-[10px] text-slate-400 block truncate">Direct Offset</span>
           </div>
 
           <!-- Net Investment -->
-          <div class="bg-surface2/90 p-4 rounded-xl border border-white/5 space-y-1">
-            <span class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Net Est. Investment</span>
-            <div id="calc-net" class="text-xl sm:text-2xl font-black text-white">₹1,08,000</div>
-            <span class="text-[10px] text-slate-400 block">After ₹78k Subsidy</span>
-          </div>
-
-          <!-- 25-Year Wealth -->
-          <div class="bg-surface2/90 p-4 rounded-xl border border-brandGold/40 space-y-1 bg-brandGold/5">
-            <span class="text-[11px] text-brandGold uppercase font-bold tracking-wider">25-Yr Net Wealth</span>
-            <div id="calc-lifetime" class="text-xl sm:text-2xl font-black text-brandGold">₹7.4 Lakhs</div>
-            <span class="text-[10px] text-slate-300 block">Risk-Free ROI</span>
+          <div class="bg-surface2/90 p-3 sm:p-4 rounded-xl border border-white/5">
+            <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Net Investment</span>
+            <div id="calc-net" class="text-lg sm:text-2xl font-black text-white">₹1,08,000</div>
+            <span class="text-[10px] text-slate-400 block truncate">After ₹78k Subsidy</span>
           </div>
 
         </div>
 
+        <!-- Compact Secondary Specs Strip -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 py-3 px-3 rounded-xl bg-surface2/60 border border-white/5 text-[11px]">
+          <div>
+            <span class="text-slate-400 block text-[10px]">Roof Space:</span>
+            <strong id="calc-roof" class="text-white">255 sq. ft.</strong>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[10px]">Monthly Generation:</span>
+            <strong id="calc-units" class="text-white">375 kWh</strong>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[10px]">Annual Savings:</span>
+            <strong id="calc-annual-savings" class="text-brandGold">₹33,744 / yr</strong>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[10px]">25-Yr Net Wealth:</span>
+            <strong id="calc-lifetime" class="text-brandGold">₹7.4 Lakhs</strong>
+          </div>
+          <!-- Hidden gross field for JS DOM sync -->
+          <span id="calc-gross" class="hidden">₹1,86,000</span>
+        </div>
+
         <!-- Action Bar -->
-        <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="flex items-center space-x-2 text-xs text-slate-300">
-            <i data-lucide="leaf" class="w-4 h-4 text-brandEmerald"></i>
-            <span>Environmental Impact: Equivalent to planting <strong id="calc-trees" class="text-brandEmerald font-bold">54 Trees</strong></span>
+        <div class="pt-4 mt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div class="flex items-center space-x-1.5 text-[11px] text-slate-300">
+            <i data-lucide="leaf" class="w-3.5 h-3.5 text-brandEmerald"></i>
+            <span>Offsets <strong id="calc-trees" class="text-brandEmerald font-bold">54 Trees</strong> worth CO₂</span>
           </div>
 
-          <a id="calc-whatsapp-btn" href="https://wa.me/917498341255?text=Hello%20Shubh%20Solar,%20I%20would%20like%20a%20quote%20for%20my%20rooftop%20solar." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-waGreen hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all btn-single-line">
-            <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>
-            <span>Get Detailed Quote on WhatsApp</span>
+          <a id="calc-whatsapp-btn" href="https://wa.me/917498341255?text=Hello%20Shubh%20Solar,%20I%20would%20like%20a%20quote%20for%20my%20rooftop%20solar." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-waGreen hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all btn-single-line">
+            <i data-lucide="message-circle" class="w-4 h-4 mr-1.5"></i>
+            <span>Get Official Quote on WhatsApp</span>
           </a>
         </div>
 
@@ -861,6 +852,7 @@
   </section>
 
   <!-- ======================================================== -->
+  <!-- 8. OUR PROJECTS<!-- ======================================================== -->
   <!-- 8. OUR PROJECTS                                          -->
   <!-- ======================================================== -->
   <section id="projects" class="overflow-hidden w-full max-w-full py-20 bg-obsidian relative">
@@ -1075,90 +1067,103 @@
     </div>
   </section>
 
+      <!-- ======================================================== -->
+  <!-- 9. PRODUCTS / BRANDS (CONTINUOUS FLOATING MARQUEE)       -->
   <!-- ======================================================== -->
-  <!-- 9. PRODUCTS / BRANDS                                     -->
-  <!-- ======================================================== -->
-  <section id="brands" class="overflow-hidden w-full max-w-full py-20 bg-surface1 border-y border-white/10 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="brands" class="overflow-hidden w-full max-w-full py-10 md:py-14 bg-surface1 border-y border-white/10 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 text-center">
+      <span class="text-[11px] font-bold text-brandGold tracking-widest uppercase bg-brandGold/10 px-3 py-0.5 rounded-full border border-brandGold/20">
+        Tier-1 Certified OEM Partners
+      </span>
+      <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight mt-2">
+        Partnered with India’s Top Solar Manufacturers
+      </h2>
+    </div>
 
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16" data-aos="fade-up">
-        <span class="text-xs font-bold text-brandGold tracking-widest uppercase bg-brandGold/10 px-3.5 py-1 rounded-full border border-brandGold/20">
-          Tier-1 Certified OEM Components
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-          Partnered with India’s Top Solar Manufacturers
-        </h2>
-        <p class="text-base text-slate-400 leading-relaxed">
-          We never cut corners on cheap unbranded modules. Every panel, inverter, and DC protection box carries full BIS, MNRE ALMM, and OEM performance warranties.
-        </p>
+    <!-- Continuous Floating Marquee (Ongoing Infinite Loop) -->
+    <div class="marquee-container py-2">
+      <div class="marquee-track">
+        <!-- Brand 1: Tata Power -->
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">TATA POWER</span>
+        </div>
+        <!-- Brand 2: Adani Solar -->
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">ADANI SOLAR</span>
+        </div>
+        <!-- Brand 3: Waaree -->
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">WAAREE</span>
+        </div>
+        <!-- Brand 4: Vikram Solar -->
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">VIKRAM SOLAR</span>
+        </div>
+        <!-- Brand 5: Sungrow -->
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandAzure"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">SUNGROW</span>
+        </div>
+        <!-- Brand 6: Growatt -->
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandAzure"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">GROWATT</span>
+        </div>
+        <!-- Brand 7: Polycab -->
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">POLYCAB</span>
+        </div>
+        <!-- Brand 8: Havells -->
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">HAVELLS</span>
+        </div>
+
+        <!-- DUPLICATE SET FOR SEAMLESS CONTINUOUS LOOP -->
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">TATA POWER</span>
+        </div>
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">ADANI SOLAR</span>
+        </div>
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">WAAREE</span>
+        </div>
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">VIKRAM SOLAR</span>
+        </div>
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandAzure"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">SUNGROW</span>
+        </div>
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandAzure"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">GROWATT</span>
+        </div>
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">POLYCAB</span>
+        </div>
+        <div class="brand-pill">
+          <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+          <span class="font-black text-sm sm:text-base text-white tracking-wider">HAVELLS</span>
+        </div>
       </div>
-
-      <!-- Brands Showcase Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-        <!-- Brand 1 -->
-        <div class="p-6 rounded-2xl bg-surface2 border border-white/10 hover:border-brandGold/40 transition-all text-center space-y-3" data-aos="zoom-in" data-aos-delay="50">
-          <div class="text-lg font-black text-white tracking-wider">TATA POWER</div>
-          <span class="text-[11px] font-bold text-brandGold block">Solar Mono PERC / TopCon</span>
-          <p class="text-xs text-slate-400 leading-relaxed">ALMM List-1 Approved • 25-Year Linear Warranty</p>
-        </div>
-
-        <!-- Brand 2 -->
-        <div class="p-6 rounded-2xl bg-surface2 border border-white/10 hover:border-brandGold/40 transition-all text-center space-y-3" data-aos="zoom-in" data-aos-delay="100">
-          <div class="text-lg font-black text-white tracking-wider">ADANI SOLAR</div>
-          <span class="text-[11px] font-bold text-brandGold block">Bifacial High-Efficiency</span>
-          <p class="text-xs text-slate-400 leading-relaxed">Dual-Glass Tech • Up to 30% Albedo Gain</p>
-        </div>
-
-        <!-- Brand 3 -->
-        <div class="p-6 rounded-2xl bg-surface2 border border-white/10 hover:border-brandGold/40 transition-all text-center space-y-3" data-aos="zoom-in" data-aos-delay="150">
-          <div class="text-lg font-black text-white tracking-wider">WAAREE</div>
-          <span class="text-[11px] font-bold text-brandGold block">India's Largest Solar OEM</span>
-          <p class="text-xs text-slate-400 leading-relaxed">550W+ High Power Density Modules</p>
-        </div>
-
-        <!-- Brand 4 -->
-        <div class="p-6 rounded-2xl bg-surface2 border border-white/10 hover:border-brandAzure/40 transition-all text-center space-y-3" data-aos="zoom-in" data-aos-delay="200">
-          <div class="text-lg font-black text-white tracking-wider">SUNGROW</div>
-          <span class="text-[11px] font-bold text-brandAzure block">98.6% Euro-Efficiency</span>
-          <p class="text-xs text-slate-400 leading-relaxed">Smart String Inverters • 10-Yr Warranty</p>
-        </div>
-
-        <!-- Brand 5 -->
-        <div class="p-6 rounded-2xl bg-surface2 border border-white/10 hover:border-brandAzure/40 transition-all text-center space-y-3" data-aos="zoom-in" data-aos-delay="250">
-          <div class="text-lg font-black text-white tracking-wider">GROWATT</div>
-          <span class="text-[11px] font-bold text-brandAzure block">IoT Cloud Connected</span>
-          <p class="text-xs text-slate-400 leading-relaxed">Dual MPPT • Seamless Grid Synchronization</p>
-        </div>
-
-        <!-- Brand 6 -->
-        <div class="p-6 rounded-2xl bg-surface2 border border-white/10 hover:border-brandGold/40 transition-all text-center space-y-3" data-aos="zoom-in" data-aos-delay="300">
-          <div class="text-lg font-black text-white tracking-wider">POLYCAB</div>
-          <span class="text-[11px] font-bold text-brandGold block">Solar DC Cables</span>
-          <p class="text-xs text-slate-400 leading-relaxed">Tinned Pure Copper • UV Resistant XLPO</p>
-        </div>
-
-        <!-- Brand 7 -->
-        <div class="p-6 rounded-2xl bg-surface2 border border-white/10 hover:border-brandGold/40 transition-all text-center space-y-3" data-aos="zoom-in" data-aos-delay="350">
-          <div class="text-lg font-black text-white tracking-wider">HAVELLS</div>
-          <span class="text-[11px] font-bold text-brandGold block">IP65 DCDB &amp; ACDB</span>
-          <p class="text-xs text-slate-400 leading-relaxed">Type-2 SPD Surge &amp; Lightning Protections</p>
-        </div>
-
-        <!-- Brand 8 -->
-        <div class="p-6 rounded-2xl bg-surface2 border border-brandAzure/40 transition-all text-center space-y-3" data-aos="zoom-in" data-aos-delay="400">
-          <div class="text-lg font-black text-brandAzure tracking-wider">THIRD EYE</div>
-          <span class="text-[11px] font-bold text-white block">Smart Security &amp; IoT</span>
-          <p class="text-xs text-slate-400 leading-relaxed">Rooftop AI Camera &amp; Power Telemetry</p>
-        </div>
-
-      </div>
-
     </div>
   </section>
 
   <!-- ======================================================== -->
+  <!-- 10. GOVERNMENT SUBSIDY<!-- ======================================================== -->
+  <!-- 10. GOVERNMENT SUBSIDY<!-- ======================================================== -->
   <!-- 10. GOVERNMENT SUBSIDY (PM SURYA GHAR)                   -->
   <!-- ======================================================== -->
   <section id="subsidy" class="overflow-hidden w-full max-w-full py-20 bg-obsidian relative">
